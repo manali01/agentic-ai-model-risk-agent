@@ -1,0 +1,61 @@
+MODEL NAME:
+Credit Card Default Prediction Model
+
+BUSINESS PURPOSE:
+The model predicts the probability that a customer will default on credit card payments within the next 12 months. The model is used for account management, credit line adjustments, and customer risk monitoring.
+
+MODEL METHODOLOGY:
+The model uses logistic regression with regularization. Features include:
+- Credit score
+- Income
+- Utilization ratio
+- Delinquency history
+- Number of open accounts
+- Recent payment behavior
+- Average monthly spend
+- Geographic region
+
+TRAINING DATA:
+Training data includes customer records from January 2021 to December 2023. Data was collected from internal banking systems.
+
+TARGET VARIABLE:
+Whether a customer defaulted within 12 months.
+
+VALIDATION PROCESS:
+Validation includes train-test split validation and AUC measurement. Reported AUC is 0.78. KS statistic was also evaluated.
+
+LIMITATIONS:
+The documentation does not clearly mention out-of-time validation testing. Stability analysis across time periods is limited. Monitoring thresholds are not fully documented.
+
+BIAS TESTING:
+Limited discussion of fairness testing is included. Bias testing across demographic groups such as geography and income bands was not comprehensively performed.
+
+FEATURE ENGINEERING:
+Recent payment behavior was heavily weighted in feature engineering. Some derived features may overlap with future performance windows.
+
+MONITORING:
+Monthly monitoring is planned. However, escalation thresholds and challenger model criteria are not clearly documented.
+
+MODEL GOVERNANCE:
+Independent validation was performed internally. However, reviewer signoff documentation is incomplete.
+
+IMPLEMENTATION:
+The model is deployed using batch scoring every month. Outputs are stored in internal risk systems.
+
+KNOWN RISKS:
+Potential risks include:
+- Data leakage
+- Feature instability
+- Population drift
+- Bias against certain customer segments
+- Weak monitoring controls
+
+FUTURE ENHANCEMENTS:
+Future work may include:
+- Gradient boosting methods
+- Enhanced bias testing
+- Automated monitoring dashboards
+- Improved challenger framework
+
+APPENDIX:
+Additional validation charts and monitoring reports are maintained separately.
